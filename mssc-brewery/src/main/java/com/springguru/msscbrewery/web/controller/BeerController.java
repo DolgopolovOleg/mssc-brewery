@@ -23,7 +23,8 @@ public class BeerController {
 
     @GetMapping("/{uuid}")
     public ResponseEntity<BeerDto> getBeerById(@PathVariable UUID uuid) {
-        return new ResponseEntity<>(beerService.findById(uuid), HttpStatus.OK);
+        BeerDto beerDto = beerService.findById(uuid);
+        return new ResponseEntity<>(beerDto, HttpStatus.OK);
     }
 
 
@@ -49,7 +50,7 @@ public class BeerController {
     }
 
     @GetMapping("/ping")
-    public ResponseEntity<String> getBeerById() {
+    public ResponseEntity<String> pingPong() {
         return new ResponseEntity<>("pongs", HttpStatus.OK);
     }
 }

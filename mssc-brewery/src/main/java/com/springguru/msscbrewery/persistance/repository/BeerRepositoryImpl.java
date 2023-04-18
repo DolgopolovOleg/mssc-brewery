@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
+import static com.springguru.msscbrewery.web.dto.BeerStyle.IPA;
+
 @Repository
 public class BeerRepositoryImpl implements BeerRepository {
     @Override
@@ -12,7 +14,7 @@ public class BeerRepositoryImpl implements BeerRepository {
         return BeerDto.builder()
                 .id(uuid)
                 .beerName("Guiness")
-                .beerStyle("IPA")
+                .beerStyle(IPA)
                 .upc(123123L)
                 .build();
     }

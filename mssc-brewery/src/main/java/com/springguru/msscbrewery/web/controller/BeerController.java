@@ -23,7 +23,7 @@ public class BeerController {
 
     @GetMapping("/{uuid}")
     public ResponseEntity<BeerDto> getBeerById(@PathVariable UUID uuid) {
-        BeerDto beerDto = beerService.findById(uuid);
+        BeerDto beerDto = beerService.findById(uuid).orElseThrow(RuntimeException::new);
         return new ResponseEntity<>(beerDto, HttpStatus.OK);
     }
 

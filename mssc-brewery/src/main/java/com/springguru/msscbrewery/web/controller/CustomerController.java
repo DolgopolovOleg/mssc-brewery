@@ -21,7 +21,7 @@ public class CustomerController {
 
     @GetMapping("/{uuid}")
     public ResponseEntity<CustomerDto> getById(@PathVariable UUID uuid) {
-        return new ResponseEntity<>(customerService.findById(uuid), HttpStatus.OK);
+        return new ResponseEntity<>(customerService.findById(uuid).orElseThrow(RuntimeException::new), HttpStatus.OK);
     }
 
     @PostMapping

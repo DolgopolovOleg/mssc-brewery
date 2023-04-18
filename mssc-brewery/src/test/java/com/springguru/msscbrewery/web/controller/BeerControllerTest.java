@@ -10,6 +10,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import static org.mockito.Mockito.when;
@@ -33,7 +34,7 @@ class BeerControllerTest {
     void getBeerById() throws Exception {
         UUID uuid = UUID.randomUUID();
         BeerDto beerDto = BeerDto.builder().id(uuid).beerName("testName").build();
-        when(beerServiceMock.findById(uuid)).thenReturn(beerDto);
+        when(beerServiceMock.findById(uuid)).thenReturn(Optional.of(beerDto));
 
         String beerDtoString = objectMapper.writeValueAsString(beerDto);
 

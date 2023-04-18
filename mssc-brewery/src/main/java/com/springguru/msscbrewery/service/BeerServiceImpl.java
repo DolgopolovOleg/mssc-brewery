@@ -5,6 +5,7 @@ import com.springguru.msscbrewery.web.dto.BeerDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -18,18 +19,21 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
-    public BeerDto findById(UUID uuid) {
-        return beerRepository.findById(uuid);
+    public Optional<BeerDto> findById(UUID uuid) {
+//        return beerRepository.findById(uuid);
+        return null;
     }
 
     @Override
     public BeerDto save(BeerDto beer) {
-        return beerRepository.save(beer);
+//        return beerRepository.save(beer);
+        return null;
     }
 
     @Override
     public BeerDto update(BeerDto beer) {
-        return beerRepository.save(beer);
+//        return beerRepository.save(beer);
+        return null;
     }
 
     @Override

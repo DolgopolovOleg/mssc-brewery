@@ -4,6 +4,7 @@ import com.springguru.msscbrewery.persistance.repository.CustomerRepository;
 import com.springguru.msscbrewery.web.dto.CustomerDto;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -16,7 +17,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerDto findById(UUID uuid) {
+    public Optional<CustomerDto> findById(UUID uuid) {
         return customerRepository.findById(uuid);
     }
 

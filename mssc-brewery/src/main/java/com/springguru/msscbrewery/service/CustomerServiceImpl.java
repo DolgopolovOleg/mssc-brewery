@@ -1,7 +1,7 @@
 package com.springguru.msscbrewery.service;
 
+import com.springguru.msscbrewery.persistance.model.Customer;
 import com.springguru.msscbrewery.persistance.repository.CustomerRepository;
-import com.springguru.msscbrewery.web.dto.CustomerDto;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,18 +17,13 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Optional<CustomerDto> findById(UUID uuid) {
+    public Optional<Customer> findById(UUID uuid) {
         return customerRepository.findById(uuid);
     }
 
     @Override
-    public CustomerDto save(CustomerDto customerDto) {
-        return customerRepository.save(customerDto);
-    }
-
-    @Override
-    public CustomerDto update(CustomerDto customerDto) {
-        return customerRepository.save(customerDto);
+    public Customer save(Customer customer) {
+        return customerRepository.save(customer);
     }
 
     @Override

@@ -1,16 +1,14 @@
 package com.springguru.msscbrewery.service;
 
-import com.springguru.msscbrewery.web.dto.CustomerDto;
+import com.springguru.msscbrewery.persistance.model.Customer;
 
 import java.util.Optional;
 import java.util.UUID;
 
 public interface CustomerService {
-    Optional<CustomerDto> findById(UUID uuid);
+    Optional<Customer> findById(UUID uuid);
 
-    CustomerDto save(CustomerDto customerDto);
-
-    CustomerDto update(CustomerDto customerDto);
+    Customer save(Customer customer);
 
     void delete(UUID uuid);
 }

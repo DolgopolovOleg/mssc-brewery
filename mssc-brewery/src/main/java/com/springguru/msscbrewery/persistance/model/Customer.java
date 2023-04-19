@@ -9,7 +9,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -18,7 +17,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Beer {
+public class Customer {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "uuid2")
@@ -34,12 +33,5 @@ public class Beer {
     private LocalDateTime updated;
 
     private String name;
-    private String style;
-    @Column(unique = true)
-    private Long upc;
-    private BigDecimal price;
-
-    private Integer minOnHand;
-    private Integer quantityToBrew;
 
 }
